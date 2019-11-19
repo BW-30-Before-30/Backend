@@ -35,7 +35,7 @@ module.exports = {
   //   seeds: { directory: './database/seeds' },
   // },
 
-  development: {
+  production: {
     client: 'sqlite3',
     connection: { 
       filename: './database/auth.db3'},
