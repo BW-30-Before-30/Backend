@@ -33,6 +33,16 @@ router.get('/', Middleware.setUserId, (req, res) => {
     });
 });
 
+router.get('/public/all', (req, res) => {
+    Bucketlist.findBy({"public": true})
+    .then(bucketlists => {
+        res.status(200).json(bucketlists);
+      }).catch(error => {
+        console.log(error);
+        res.status(500).json({"message": "error fetching public bucketlists"});
+      })
+});
+
 // must be authenticated and the list sh
 router.put('/:id', Middleware.setUserId, Middleware.getBucketList, (req, res) => {
   const bucketlist = req.params.bucketlist;
