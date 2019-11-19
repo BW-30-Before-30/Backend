@@ -10,7 +10,7 @@ module.exports = {
     migrations: {
       directory: './database/migrations',
       tableName: 'dbmigrations',
-    },
+    }, 
     seeds: { directory: './database/seeds' },
   },
   testing: {
