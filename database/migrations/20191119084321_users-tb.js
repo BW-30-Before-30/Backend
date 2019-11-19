@@ -6,7 +6,7 @@ exports.up = function(knex) {
 			.notNullable()
 			.unique();
 		tb.string('password', 255).notNullable();
-		tb.string('displayname', 255);
+		tb.string('email', 255);
 		tb.timestamps(true, true);
 	});
 };

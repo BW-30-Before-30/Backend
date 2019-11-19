@@ -10,12 +10,12 @@ exports.seed = function(knex) {
 					username: 'test',
 					password:
 						'$2a$16$jaB7FFSN6RFD/pHB1y8O7ufEzBy2nG162Ogrbo1YdP8imjYrLKuDS',
-					displayname: 'test'
+					email: 'test@yahoo.com'
 				},
 				{
 					id: 2,
 					username: 'admin',
-					displayname: 'admin',
+					email: 'admin@yahoo.com',
 					password:
 						'$2a$16$kEfwcsMxA7vrTeGXZ9MlWuxV/ePU5D1b1CWdLK.ehetSy1H.R1y3C'
 				}

@@ -9,14 +9,14 @@ const secrets = require('../secrets');
 
 router.post('/register', (req, res) => {
 	let user = req.body;
-	if (user.username && user.password && user.displayname) {
+	if (user.username && user.password && user.email) {
 		const hash = bcrypt.hashSync(user.password, 16);
 		user.password = hash;
 		Users.add(user)
 			.then(newUser => {
 				Bucketlist.create(newUser.id)
 					.then(bucket => res.status(201).json(newUser))
-					.catch(error => res.status(500).json(error));
+					.catch(error => res.status(500).json({ error: 'cannot register' }));
 			})
 			.catch(error => {
 				console.log(error);
