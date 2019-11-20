@@ -39,9 +39,9 @@ router.put(
 	Middleware.getBucketList,
 	(req, res) => {
 		const bucketlist = req.params.bucketlist;
-		const { public } = req.body;
+		const { publicAcc } = req.body;
 		if (req.params.userId === bucketlist.user_id) {
-			Bucketlist.update(bucketlist.id, { public: public })
+			Bucketlist.update(bucketlist.id, { publicAcc: publicAcc })
 				.then(id => res.status(200).json({ id }))
 				.catch(error =>
 					res.status(500).json({ message: 'coult not update list' })

@@ -15,7 +15,7 @@ router.post('/register', (req, res) => {
 		Users.add(user)
 			.then(newUser => {
 				Bucketlist.create(newUser.id)
-					.then(bucket => res.status(201).json(newUser))
+					.then(bucket => res.status(200).json(newUser))
 					.catch(error => res.status(500).json({ error: 'cannot register' }));
 			})
 			.catch(error => {
