@@ -6,7 +6,7 @@ exports.seed = function(knex) {
 			return knex('items').insert([
 				{
 					id: 1,
-					title: 'skydive',
+					name: 'skydive',
 					description: 'Skydive from 20K',
 					link: 'https://halojumper.com/',
 					deadline: '2020-10-10',
@@ -15,7 +15,7 @@ exports.seed = function(knex) {
 				},
 				{
 					id: 2,
-					title: 'Tower of London',
+					name: 'Tower of London',
 					description: 'See tower of london',
 					link: 'https://www.hrp.org.uk/tower-of-london/#gs.gqbgbm',
 					deadline: '2021-11-11',
@@ -24,7 +24,7 @@ exports.seed = function(knex) {
 				},
 				{
 					id: 3,
-					title: 'Trip to Peru',
+					name: 'Trip to Peru',
 					description: 'Visit Machu-Picchu',
 					link:
 						'https://www.travelchannel.com/destinations/peru/articles/what-you-should-know-about-visiting-machu-picchu',
