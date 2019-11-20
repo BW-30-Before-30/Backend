@@ -27,7 +27,7 @@ function findByListId(listId) {
 // }
 
 async function add(item) {
-  const [id] = await db('items').insert(item);
+  const [id] = await db('items').insert(item).returning('id');
 
   return findById(id);
 }

@@ -1,4 +1,5 @@
 const db = require('../database/dbConfig')
+const knex = require('knex');
 
 module.exports = {
   add,
@@ -16,9 +17,9 @@ function findBy(filter) {
 }
 
 async function add(user) {
-  const [id] = await db('users').insert(user);
-
-  return findById(id);
+  const ids = await db('users').insert(user).returning('id')
+  console.log(ids)
+  return findById(ids[0]);
 }
 
 function findById(id) {

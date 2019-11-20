@@ -14,7 +14,6 @@ it("should set db environment to testing", function() {
   expect(process.env.DB_ENV).toBe("testing");
 });
 
-
 // Login tests
 describe('POST /api/login', () => {
   it('should return 401 status for wrong user', async () => {
@@ -72,7 +71,7 @@ describe('POST /api/register', () => {
 
 
 
-// jokes api test 
+// bucketlists api test 
 describe('GET /api/bucketlists', () => {
   it('Needs authorization', async() => {
     const res = await request(server).get('/api/jokes')

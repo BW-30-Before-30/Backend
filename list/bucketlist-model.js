@@ -15,7 +15,7 @@ function findBy(filter) {
 
 async function create(user_id) {
 
-  const [id] = await db('bucketlists').insert({user_id: user_id});
+  const [id] = await db('bucketlists').insert({user_id: user_id}).returning('id');
 
   return findById(id);
 }

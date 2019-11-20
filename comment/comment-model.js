@@ -12,7 +12,7 @@ function findBy(filter) {
 }
 
 async function add(comment) {
-  const [id] = await db('comments').insert(comment);
+  const [id] = await db('comments').insert(comment).returning('id');
   return findById(id);
 }
 
