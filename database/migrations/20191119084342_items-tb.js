@@ -2,7 +2,6 @@ exports.up = function(knex) {
 	return knex.schema.createTable('items', tb => {
 		tb.increments();
 
-		tb.string('name', 255).notNullable();
 		tb.string('description', 255);
 		tb.string('link', 255);
 		tb.date('deadline');
